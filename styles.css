@@ -1,18 +1,182 @@
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+    'header header header header header header header header header'
+    'side main main main main main main main main'
+    'side main main main main main main main main'
+    'side main main main main main main main main';
+}
+
+#byall, #byopen, #bytickets{
+    padding-right: 25px;
+    padding-left: 25px;
+    /* background-color: #206bc1; */
+    border-radius: 3px;
+    border-spacing: 50px 0;
+}
+
+.large-space b{
+    border-spacing: 100px 0;
+}
+
+select option{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: grey;
+}
+.same-space b{
+    border-spacing: 80px 0;
+}
+
+#byall:hover, #byopen:hover, #bytickets:hover{
+    background-color: #206bc1;
+    color: white;
+}
+
+header{
+    /* grid-column: col-start / -1; */
+    grid-area: header;
+}
+
+.main{
+    margin-left: 25px;
+    /* grid-column: col-start 4 / -1; */
+    grid-area: main;
+}
+
+.side{
+    /* grid-column: col-start / span 3; */
+    grid-area: side;
+    background-color:#f0f0f0;
+    padding-bottom: 420px;
+}
+
+select{
+    border-style: solid;
+    border-color: black;
+    border-radius:5px;
+    border-color: rgb(167, 162, 162);
+    box-shadow: none;
+    background-color: #f0f1f179;
+    width: 400px;
+    height: 25px;
+}
+
+.textf{
+    border-style: solid;
+    border-color: black;
+    border-radius:5px;
+    border-color: rgb(167, 162, 162);
+    box-shadow: none;
+    background-color: #f0f1f179;
+    width: 400px;
+    height: 25px;
+}
+
+textarea{
+    border-style: solid;
+    border-color: black;
+    border-radius:5px;
+    border-color: rgb(167, 162, 162);
+    box-shadow: none;
+    background-color: #f0f1f179;
+    width: 400px;
+    height: 50px;
+}
+
+.txtf{
+    border-style: solid;
+    border-color: black;
+    border-radius:5px;
+    border-color: rgb(167, 162, 162);
+    box-shadow: none;
+    background-color: #f0f1f179;
+    width: 400px;
+    height: 25px;
+}
+
+#submit-issue, #new-user{
+    background-color: #206bc1;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-weight: bold;
+}
+
+#new-issue-btn{
+    background-color: #2d9e63;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-weight: bold;
+    float: right;
+    margin-right: 30px;
+    margin-top: 15px;
+
+}
+
+#loginpge{
+    text-align: center;
+    background-image: url(images/bug-motif.jpg);
+}
+
+#lgn-btn{
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#lgn-btn:hover{
+    background-color: #2d9e63;
+    color: white;
+}
+
+label{
+    font-size: 18px;
+}
+
+.fields{
+    font-size: 14px;
+    color: lightgray;
+    border-radius: 5px;
+}
+
+h2{
+    font-size: 50px;
+    margin-bottom: 7px;
+}
+
 .floatthis{
     float: left;
     height: 20px;
     width: 20px;
     padding-right: 12px;
-    padding-left: 5px;
-    padding-top: 5px;
+    padding-left: 25px;
+    padding-top: 3px;
 }
 
 h1{
     color: white;
+    font-size: 20px;
 }
 
 header{
     background-color: black;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 ul li{

@@ -26,27 +26,32 @@
     <div class="container main">
         <h2>Create Issue</h2>
         <form>
-            Title <br><input type="text" id="issue_title" name="issue_title"><br>
-            Description <br><textarea rows="4" cols="60" id="description" name="description"></textarea><br>
-            Assigned To <br><select id="assigned" name="assigned">
+            <label for="issue_title">Title</label>
+            <br><input class="textf" type="text" id="issue_title" name="issue_title"><br><br>
+            <label for="description">Description</label>
+            <br><textarea id="description" name="description"></textarea><br><br>
+            <label for="assigned">Assigned To</label>
+            <br><select id="assigned" name="assigned">
                 <option value="1">-select an option-</option>
                 <option value="2">Javon Ellis</option>
                 <option value="3">Joanna-Joy Gray</option>
                 <option value="4">Nathaniel Bedassie</option>
                 <option value="5">Zo&euml; Hall</option>
-            </select><br>
-            Type <br><select id="typeof" name="typeof">
+            </select><br><br>
+            <label for="typeof">Type</label>
+            <br><select id="typeof" name="typeof">
                 <option value="1">-select an option-</option>
                 <option value="2">Bug</option>
                 <option value="3">Proposal</option>
                 <option value="4">Task</option>
-            </select><br>
-            Priority <br><select id="priority" name="priority">
+            </select><br><br>
+            <label for="priority">Priority</label>
+            <br><select id="priority" name="priority">
                 <option value="1">-select an option-</option>
                 <option value="2">Minor</option>
                 <option value="3">Major</option>
                 <option value="4">Critical</option>
-            </select><br>
+            </select><br><br>
             <input id="submit-issue" type="submit" value="Submit">
         </form>
     </div>
