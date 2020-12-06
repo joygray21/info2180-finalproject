@@ -57,7 +57,7 @@ function login(){
 
 function registerRequest(firstname,lastname,email,password,callback){
     $.ajax({
-        url:"http://localhost/info2180-finalproject/php/register.php",
+        url:"http://localhost:8080/php/register.php",
         type: "POST",
         data: {
             firstname: firstname,
@@ -73,7 +73,7 @@ function registerRequest(firstname,lastname,email,password,callback){
 
 function loginRequest(email,password,callback){
     $.ajax({
-        url:"http://localhost/info2180-finalproject/php/login.php",
+        url:"http://localhost:8080/php/login.php",
         type: "GET",
         data: {
             email: email,

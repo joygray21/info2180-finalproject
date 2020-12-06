@@ -6,7 +6,7 @@
     $assigned_to = $_POST['assigned'];
     $issue_type = $_POST['type'];
     $issue_priority = $_POST['priority'];
-    $created_by = $_SESSION['name'];
+    $created_by = $_SESSION['firstname'] . " " . $_SESSION['lastname'];
 
     /*  December 5, 2020
         Insert new issue into Issues table.
