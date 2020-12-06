@@ -44,7 +44,8 @@ try {
 
 
 ?>
-
+<h2>Issues<button id="new-issue-btn">Create New Issue</button></h2>
+<h2>Filter By: <button id="byAll">ALL</button><button id="byOpen">OPEN</button><button id="byTickets">Tickets</button><br><br>
 <table class="table table-hover table-sm table-bordered">
   <tr>
     <th>Title</th>
@@ -55,7 +56,7 @@ try {
   </tr>
   <?php foreach ($results as $row): ?>
   <tr>
-    <td><?= $row['title'] ?></td>
+    <td><?= $row['id'] ." ". $row['title'] ?></td>
     <td><?= $row['type']?></td>
     <td><?= $row['status']?></td>
     <td><?=$fullname = $row['firstname'] . ' '. $row['lastname']?></td>
