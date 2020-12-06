@@ -24,7 +24,7 @@
             $stmt->bindParam(':priority', $issue_priority);
             $stmt->bindParam(':status', "OPEN");
             $stmt->bindParam(':assigned_to', $row['id']);
-            $stmt->bindParam(':created_by', 1);
+            $stmt->bindParam(':created_by', $created_by);
             date_default_timezone_set('Jamaica');
             $stmt->bindParam(':created', date('Y-m-d h:i:s', time()));
             $stmt->bindParam(':updated', date('Y-m-d h:i:s', time()));
