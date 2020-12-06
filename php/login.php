@@ -2,6 +2,8 @@
 
 require_once 'dbconnect.php';
 
+// Start the session
+session_start();
 
 
 
@@ -34,12 +36,10 @@ foreach ($checkresults as $row):
         if (password_verify($password, $row['password'])) {
             echo 'Password is valid!';
 
-            // Start the session
-            session_start();
-
+            
             $_SESSION["firstname"] = $row['firstname'];
-            $_SESSION["lastname"] = $row['firstname'];
-            $_SESSION["email"] = $row['firstname'];
+            $_SESSION["lastname"] = $row['lastname'];
+            $_SESSION["email"] = $row['email'];
 
         } else {
             echo 'Invalid password.';

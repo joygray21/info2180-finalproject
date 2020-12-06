@@ -4,6 +4,8 @@ window.onload = function () {
     register();
 
     login();
+    filterTable();
+  
     
  
 }
@@ -26,6 +28,20 @@ function register(){
         //send data to server
         registerRequest(fname,lname,email,pword, function(data){
             console.log(data)
+        });
+ 
+         
+     });
+
+}
+
+function filterTable(){
+
+    //jquery register on click
+    $('#filter').on('click', function(){
+
+        issueTable("Open", function(data){
+            console.log(data);
         });
  
          
@@ -78,6 +94,19 @@ function loginRequest(email,password,callback){
         data: {
             email: email,
             password:password
+        },
+        success: function (data){
+            callback(data)
+        }
+    })
+}
+
+function issueTable(filter,callback){
+    $.ajax({
+        url:"http://localhost/info2180-finalproject/php/issues.php",
+        type: "GET",
+        data: {
+            filter: filter
         },
         success: function (data){
             callback(data)
