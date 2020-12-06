@@ -6,7 +6,7 @@
     <title>BugMe Issue Tracker</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="pages">
     <header>
         <div class="container">
             <img class="floatthis"src="images/bug2.1.jpg" alt="Animated bug">
@@ -14,16 +14,16 @@
         </div>
     </header>
 
-    <div class="container" id="side">
+    <div class="container side">
         <ul>
-            <li id="home"><a href="#">Home</a></li>
+            <li id="home"><a href="issues.html">Home</a></li>
             <li id="add_user"><a href="#">Add User</a></li>
             <li id="new_issue"><a href="createIssue.html">New Issue</a></li>
             <li id="logout"><a href="#">Logout</a></li>
         </ul>
     </div>
 
-    <div class="container" id="maincontent">
+    <div class="container main">
         <h2>Create Issue</h2>
         <form>
             Title <br><input type="text" id="issue_title" name="issue_title"><br>
@@ -47,7 +47,7 @@
                 <option value="3">Major</option>
                 <option value="4">Critical</option>
             </select><br>
-            <input type="submit" value="Submit">
+            <input id="submit-issue" type="submit" value="Submit">
         </form>
     </div>
     </body>
