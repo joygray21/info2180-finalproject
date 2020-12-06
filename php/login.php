@@ -6,42 +6,52 @@ require_once 'dbconnect.php';
 
 
 
-/* $country = filter_input(INPUT_GET,"country",FILTER_SANITIZE_STRING);
-$context = filter_input(INPUT_GET,"context",FILTER_SANITIZE_STRING); */
+$email = filter_input(INPUT_GET,"email",FILTER_SANITIZE_STRING);
+$password = filter_input(INPUT_GET,"password",FILTER_SANITIZE_STRING);
 
 
 
-$stmt = $conn->query("SELECT * FROM Users");
+$checkstmt = $conn->query("SELECT count(*) from Users where email = '$email' ");
+
+$checkresults =  $checkstmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-$results =  $stmt->fetchAll(PDO::FETCH_ASSOC);
+foreach ($checkresults as $row):
+    if($row['count(*)'] == '0'){
+        echo("There is no user with that email"); 
+
+    }elseif($row['count(*)'] > 0){
+       
+
+    //query to find user by email
+    $stmt = $conn->query("SELECT * FROM Users where email = '$email' ");
+
+    $results =  $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($results as $row):
+       
+        //verify hash vs password
+        if (password_verify($password, $row['password'])) {
+            echo 'Password is valid!';
+
+            // Start the session
+            session_start();
+
+            $_SESSION["firstname"] = $row['firstname'];
+            $_SESSION["lastname"] = $row['firstname'];
+            $_SESSION["email"] = $row['firstname'];
+
+        } else {
+            echo 'Invalid password.';
+        }
+    endforeach;
+
+    }
+    
+endforeach;
 
 
-
-//$stmtCity =  $conn->query("SELECT city.name, city.district,city.population FROM cities city LEFT JOIN countries country ON city.country_code = country.code  WHERE country.name LIKE '%$country%'");
-
-
-
-//$results = ($context == 'country') ? $stmt->fetchAll(PDO::FETCH_ASSOC) : $stmtCity->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<table class="table table-hover table-sm table-bordered">
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Password</th>
-    <th>email</th>
-    <th>date joined</th>
-  </tr>
-  <?php foreach ($results as $row): ?>
-  <tr>
-    <td><?= $row['firstname']?></td>
-    <td><?= $row['lastname']?></td>
-    <td><?= $row['email']?></td>
-    <td><?= $row['password']?></td>
-    <td><?=$row['date_joined']?></td>
-  </tr>
-  <?php endforeach; ?>
-</table>
 
