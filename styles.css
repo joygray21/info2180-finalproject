@@ -1,31 +1,27 @@
 body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-image: url(images/bug-motif.jpg);
-}
-
-/* #main{
-    grid-area: main;
-}
-
-#side{
-    grid-area: side;
-    background-color: grey;
-}
-
-#page .container{
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    grid-template-rows: auto auto auto;
-    grid-template-areas: 
-    'side main main main main'
-    'side main main main main'
-    'side main main main main';
-} */
+    grid-template-columns: repeat(12, [col-start] 1fr);
+}
 
+header{
+    grid-column: col-start / -1;
+}
 
+.main{
+    margin-left: 15px;
+    grid-column: col-start 4 / -1;
+}
+
+.side{
+    grid-column: col-start / span 3;
+    background-color:#f0f0f0;
+}
 
 #loginpge{
     text-align: center;
+    grid-column: col-start/-1;
+    background-image: url(images/bug-motif.jpg);
 }
 
 #lgn-btn{
