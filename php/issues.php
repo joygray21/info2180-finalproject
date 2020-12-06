@@ -1,7 +1,9 @@
 <?php
-require_once 'dbconnect.php';
-
+// Original author: Javon Ellis
+// Edited by Nathaniel Bedassie
 session_start();
+
+require_once 'dbconnect.php';
 
 $filter = filter_input(INPUT_GET,"filter",FILTER_SANITIZE_STRING);
 

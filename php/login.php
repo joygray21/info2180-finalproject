@@ -1,11 +1,8 @@
 <?php
-
-require_once 'dbconnect.php';
-
-// Start the session
+// Start the session, Edited by Nathaniel Bedassie
 session_start();
 
-
+require_once 'dbconnect.php';
 
 
 $email = filter_input(INPUT_GET,"email",FILTER_SANITIZE_STRING);
