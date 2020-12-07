@@ -87,7 +87,7 @@ p, h6{
     padding-bottom: 10px;
 }
 
-.iss-stat /*.opn*/{
+.iss-stat .opn{
     text-align: center;
     background-color: #2da562;
     border-radius: 3px;
@@ -281,22 +281,22 @@ li a{
 }
 
 #home{
-    list-style-image: url(images/home.png);
+    list-style-image: url(images/home.svg);
     padding-top: 10px;
 }
 
 #add_user{
-    list-style-image: url(images/user.png);
+    list-style-image: url(images/add-user-symbol-of-interface.svg);
     padding-top: 10px;
 }
 
 #new_issue{
-    list-style-image: url(images/add-button.png);
+    list-style-image: url(images/add-button.svg);
     padding-top: 10px;
 }
 
 #logout{
-    list-style-image: url(images/logout.png);
+    list-style-image: url(images/power.svg);
     padding-top: 10px;
 }
 
