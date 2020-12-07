@@ -8,10 +8,10 @@ require_once 'dbconnect.php';
 
 //$results =  $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$firstname = filter_input(INPUT_POST,"firstname",FILTER_SANITIZE_STRING);
-$lastname = filter_input(INPUT_POST,"lastname",FILTER_SANITIZE_STRING);
+$firstname = filter_input(INPUT_POST,"fname",FILTER_SANITIZE_STRING);
+$lastname = filter_input(INPUT_POST,"lname",FILTER_SANITIZE_STRING);
 $email = filter_input(INPUT_POST,"email",FILTER_SANITIZE_STRING);
-$password = filter_input(INPUT_POST,"password",FILTER_SANITIZE_STRING);
+$password = filter_input(INPUT_POST,"pword",FILTER_SANITIZE_STRING);
 
 //hash password
 $hash = password_hash($password,PASSWORD_BCRYPT);
