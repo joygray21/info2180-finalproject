@@ -26,7 +26,6 @@ if($filter == "All"){
 
 }
 
-
 try {
       
     // set the PDO error mode to exception

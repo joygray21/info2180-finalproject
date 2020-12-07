@@ -38,8 +38,11 @@ foreach ($checkresults as $row):
             $_SESSION["lastname"] = $row['lastname'];
             $_SESSION["email"] = $row['email'];
 
+            require_once 'issue.php';
         } else {
             echo 'Invalid password.';
+            session_unset();
+            session_destroy();
         }
     endforeach;
 
