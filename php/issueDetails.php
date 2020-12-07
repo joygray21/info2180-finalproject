@@ -34,28 +34,31 @@
             while ($row = $stmt->fetch()) {
                 $stmt2 = $conn->query("SELECT firstname, lastname from Users where id = " . $row['created_by']);
                 while ($row2 = $stmt2->fetch()){
-                    echo "<section>";
-                    echo "<article>";
-                    echo "<h2>".$row['title']."</h2>";
-                    echo "<h4> Issue #".$row['id']."</h4>";
-                    echo "<br><p>".$row['descripton']."</p>";
-                    echo "<p> Issue created on " . $row['created'] . " by " . $row2['firstname']. " " . $row2['lastname'] . "</p>";
-                    echo "<p> Last updated onon " . $row['updated'] . "</p>";
-                    echo "</article>";
-                    echo "<article>";
-                    echo "Assigned To<br>" . $row['firstname'] . " " . $row['lastname'];
-                    echo "Type<br>" . $row['type'];
-                    echo "Priority<br>" . $row['priority'];
-                    echo "Status<br>" . $row['status'];
-                    echo "</article>";
-                    echo "</section>";
+                    echo "<div class='main'>
+                        <h2>".$row['title']."</h2>
+                        <h6>Issue #".$row['id']."</h6>
+                        <p>".$row['description']."
+                        </p>
+                        <p> Issue created on " . $row['created'] . " by " . $row2['firstname']. " " . $row2['lastname'] . "</p>
+                        <p> Last updated on " . $row['updated'] . "</p>
+                    </div>
+                
+                    <div class='right'>
+                        <div class='info'><b>Assigned To</b><p>" . $row['firstname'] . " " . $row['lastname']. "</p>
+                        <b>Type</b><br><p>" . $row['type']. "</p>
+                        <b>Priority</b><br><p>" . $row['priority']. "</p>
+                        <b>Status</b><br><p>" . $row['status']. "</p></div>
+                        <input id='close-btn' type='submit' value='Mark as Closed'><br><br>
+                        <input id='prgrss-btn' type='submit' value='Mark In Progress'><br>
+                    </div>";
                 }
             }
         } catch(PDOException $e) {
             $_SESSION["error"] = $e->getMessage();
+            echo $_SESSION["error"];
         }
     
-        require 'login.php';
+        //require 'issues.php';
         $conn = null;
     
     }
