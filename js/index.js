@@ -19,15 +19,15 @@ window.onload = function () {
     var byAllFilterBtn = document.querySelector('#byall');
     var byOpenFilterBtn = document.querySelector('#byopen');
     var byTicketsFilterBtn = document.querySelector('#bytickets');
-    var issueDescLink = document.querySelector('.iss-title').value;
+    // var issueDescLink = document.querySelector('.iss-title').value;
 
     //createIssues page buttons
     var createIssueBtn = document.querySelector('#create-issue-btn');
 
     //fullDetails page buttons
-    //close
-    //in progress
-
+    var closeBtn = document.querySelector('#close-btn');
+    var progressBtn = document.querySelector('#prgrss-btn');
+   
 //nav functions
     homeBtn.onclick = function(element){
         element.preventDefault();
@@ -282,8 +282,10 @@ window.onload = function () {
         element.preventDefault();
 
         xhr = new XMLHttpRequest();
+        //get issue id
         var url = "php/issueDetails.php";
-
+        //append issue id to  url
+        
         xhr.onreadystatechange = printIssues; 
         xhr.open("GET", url);
             
@@ -395,13 +397,20 @@ window.onload = function () {
     }
 
 
+//fullDetails page functions
+    closeBtn.onclick = function(element){
+        
+    }
+
+
+
 //////
 
     //calling register function
-    register();
+    // register();
 
-    login();
-    filterTable();
+    // login();
+    // filterTable();
   
     
  
