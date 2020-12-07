@@ -1,5 +1,4 @@
 window.onload = function(){
-    var newUserBtn = document.querySelector('#new-user');
     var lgnBtn = document.querySelector('#lgn-btn');
     var xhr;
 

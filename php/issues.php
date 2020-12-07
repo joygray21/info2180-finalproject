@@ -58,8 +58,8 @@ try {
     </tr>
 
     <?php foreach ($results as $row): ?>
-    <tr id="sample">
-        <div><td id='<?= $row['id']?>' class="iss-title"><b>#<?= $row['id']?> </b><span><?= $row['title'] ?></span></td></div>
+    <tr id='<?= $row['id']?>'>
+        <div><td class="iss-title"><b>#<?= $row['id']?> </b><span><?= $row['title'] ?></span></td></div>
         <div><td class="iss-type"><?= $row['type']?></td></div>
         <div><td class="iss-stat"><div><?= $row['status']?></div></td></div>
         <div><td class="iss-assigned"><?=$fullname = $row['firstname'] . ' '. $row['lastname']?></td></div>

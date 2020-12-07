@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BugMe Issue Tracker</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- <script src="scripts.js"></script> -->
+    <script src="js/index.js"></script>
 </head>
 <body>
     <header>
@@ -16,19 +16,20 @@
     </header>
 
     <div class="container side">
+        <ul>
+            <!-- <li id="home"><a href="issues.html">Home</a></li>
+            <li id="add_user"><a href="newUser.html">Add User</a></li>
+            <li id="new_issue"><a href="createIssue.html">New Issue</a></li>
+            <li id="logout"><a href="index.html">Logout</a></li> -->
+            <li id="home"><a href="index.html">Home</a></li>
+            <li id="add_user"><a href="index.html">Add User</a></li>
+            <li id="new_issue"><a href="index.html">New Issue</a></li>
+            <li id="logout"><a href="index.html">Logout</a></li>
+        </ul>
     </div>
 
     <div class="container main right-side" id="loginpge">
-        <br><br><br><h2>Welcome to BugMe Issue Tracker!</h2>
-        <h3>Please login below to get started.</h3><br>
-        <form>
-            <label for="email">Email address:  </label>
-            <input class="fields" type="text" value="Enter email address here.." id="email" name="email"><br><br>
-            <label for="pword">Password:  </label>
-            <input class="fields" type="text" value="Enter password here.." id="pword" name="pword"><br><br>
-            <input id="lgn-btn" type="submit" value="Login"><br><br><br><br>
-            <div id="wrg-pword"></div>
-        </form>
+        
     </div>
 </body>
 </html>
