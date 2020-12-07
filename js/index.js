@@ -15,11 +15,18 @@ window.onload = function () {
     var lgnBtn = document.querySelector('#lgn-btn');
 
     //issues page buttons
-    var newIssueBtn = document.querySelector('#new-issue-btn');
+    var newIssueIPBtn = document.querySelector('#new-issue-btn');
     var byAllFilterBtn = document.querySelector('#byall');
     var byOpenFilterBtn = document.querySelector('#byopen');
     var byTicketsFilterBtn = document.querySelector('#bytickets');
-    var issueDescLink = document.querySelector('.iss-title');
+    var issueDescLink = document.querySelector('.iss-title').value;
+
+    //createIssues page buttons
+    var createIssueBtn = document.querySelector('#create-issue-btn');
+
+    //fullDetails page buttons
+    //close
+    //in progress
 
 //nav functions
     homeBtn.onclick = function(element){
@@ -51,7 +58,7 @@ window.onload = function () {
         element.preventDefault();
 
         xhr = new XMLHttpRequest();
-        var url = "php/createIssueHTML.php";
+        var url = "php/createIssueHtml.php";
 
         xhr.onreadystatechange = updatePageTemplate; 
         xhr.open("GET", url);
@@ -74,7 +81,7 @@ window.onload = function () {
         //login
         xhr = new XMLHttpRequest();
 
-        var url = "php/loginHTML.php";
+        var url = "php/loginHtml.php";
         xhr.onreadystatechange = updatePageTemplate; 
         xhr.open("GET", url);
         xhr.send();
@@ -84,7 +91,7 @@ window.onload = function () {
         if (xhr.readyState === 4){
             if (xhr.status === 200){
                 var response = xhr.responseText;
-                document.querySelector('.container main right-side').innerHTML = response;
+                document.querySelector('.right-side').innerHTML = response;
             }
         }
     }
@@ -284,8 +291,10 @@ window.onload = function () {
     }
 
 
-    //update styles for statuses
-    newIssueBtn.onclick = function(element){
+    //update styles for statuses - TBD
+
+
+    newIssueIPBtn.onclick = function(element){
         element.preventDefault();
 
         xhr = new XMLHttpRequest();
@@ -346,7 +355,44 @@ window.onload = function () {
         }
     }
 
+//createIssues page functions
+    createIssueBtn.onclick = function(element){
+        xhr = new XMLHttpRequest();
 
+        var title = document.querySelector('#issue_title');
+        var desc = document.querySelector('#description');
+
+        var url = "php/createIssue.php";
+
+        var titleV = encodeURIComponent(title.value.trim());
+        var descV = encodeURIComponent(desc.value.trim());
+        var userVal = document.querySelector('#assigned').value;
+        var typeVal = document.querySelector('#typeof').value;
+        var priVal = document.querySelector('#priority').value;
+        var parameters = "issue_title=" + titleV + "&issue_description=" + descV + "&assigned" + userVal + "&type=" + typeVal + "&priority=" + priVal ;
+
+        xhr.onreadystatechange = printIssueFeedback; 
+        xhr.open("POST", url);
+        
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send(parameters);
+
+        xhr = new XMLHttpRequest();
+        var url = "php/issues.php";
+
+        xhr.onreadystatechange = updatePageTemplate; 
+        xhr.open("GET", url);
+            
+        xhr.send();
+    }
+
+    function printIssueFeedback(){
+        if (xhr.readyState === 4){
+            if (xhr.status === 200){
+                
+            }
+        }
+    }
 
 
 //////

@@ -35,7 +35,7 @@
             $_SESSION["error"] = $e->getMessage();
         }
     
-        require 'login.php';
+        // require 'login.php';
         $conn = null;
     }
 ?>

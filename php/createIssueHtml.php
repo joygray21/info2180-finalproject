@@ -17,21 +17,21 @@
             <option value="1">-Select a User-</option>
 <?php
             foreach ($users as $row):
-                echo "<option value=". $i ."> ". $row['firstname'] ." " . $row['lastname']."</option>";
+                echo "<option value=". $row['firstname'] ." " . $row['lastname'] ."> ". $row['firstname'] ." " . $row['lastname']."</option>";
             endforeach;
 ?>
             </select><br>
             Type <br><select id="typeof" name="typeof">
-                <option value="1">-select an option-</option>
-                <option value="2">Bug</option>
-                <option value="3">Proposal</option>
-                <option value="4">Task</option>
+                <option value="select an option">-select an option-</option>
+                <option value="Bug">Bug</option>
+                <option value="Proposal">Proposal</option>
+                <option value="Task">Task</option>
             </select><br>
             Priority <br><select id="priority" name="priority">
-                <option value="1">-select an option-</option>
-                <option value="2">Minor</option>
-                <option value="3">Major</option>
-                <option value="4">Critical</option>
+                <option value="select an option">-select an option-</option>
+                <option value="Minor">Minor</option>
+                <option value="Major">Major</option>
+                <option value="Critical">Critical</option>
             </select><br>
-            <input type="submit" value="Submit">
+            <input id = "create-issue-btn" type="submit" value="Submit">
         </form>
