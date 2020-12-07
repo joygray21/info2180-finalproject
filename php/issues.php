@@ -55,7 +55,7 @@ try {
   </tr>
   <?php foreach ($results as $row): ?>
   <tr>
-    <td><?= $row['id'] ." ". $row['title'] ?></td>
+    <td id='<?= $row['id']?>'><?= $row['id'] ." ".$row['title'] ?></td>
     <td><?= $row['type']?></td>
     <td><?= $row['status']?></td>
     <td><?=$fullname = $row['firstname'] . ' '. $row['lastname']?></td>
